@@ -1,0 +1,414 @@
+@charset "utf-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+*{
+  transition: all 0.3s;
+}
+
+input, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+html {
+  line-height: 1;
+}
+
+body{
+  font-family: "Segoe UI", Verdana, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.6;
+  color: #3f3f3f;
+  letter-spacing: 1px;
+}
+
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+a{
+  text-decoration: none;
+  color: #333;
+}
+a:hover{
+  cursor: pointer;
+  opacity: 0.7;
+}
+a img {
+  border: none;
+  overflow: hidden;
+}
+a img:hover{
+  transform: scale(1.1,1.1);
+}
+a:hover img{
+ transform: scale(1.1,1.1); 
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+img{
+  display: block;
+}
+
+/*共通*/
+.header{
+  border-top: 2px solid #f08080;
+}
+.header .inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.logo{
+  font-size: 24px;
+}
+.logo a{
+  color: #666;
+}
+.nav a{
+  display: inline-block;
+  margin-left: 10px;
+  color: #666;
+}
+.headNav a{
+  padding-left: 30px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 20px;
+  margin-left: 20px;
+}
+.headNav a.navTop{
+  background-image: url(../img/icon_home.svg);
+  background-size: 19px;
+}
+.headNav a.navNews{
+  background-image: url(../img/icon_news.svg);
+  background-size: 20px;
+}
+.headNav a.navCompany{
+  background-image: url(../img/icon_company.svg);
+  background-size: 18px;
+}
+.logo{
+  font-family: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" ,serif;
+}
+.menu-trigger{
+  display: none;
+}
+.inner{
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.sec{
+  padding: 50px 0;
+}
+.main{
+  width: 690px;
+  float: left;
+  margin-right: 40px;
+}
+.sidebar{
+  width: 230px;
+  float: left;
+}
+
+
+.secTitle{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: #666666;
+}
+.secTitle span{
+  font-size: 28px;
+  color: #f08080;
+  font-family: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" ,serif;
+}
+.btnWrap{
+  margin-top: 20px;
+  text-align: center;
+}
+.btn{
+  display: inline-block;
+  color: #fff;
+  height: 45px;
+  line-height: 45px;
+  min-width: 180px;
+  background: #f08080;
+}
+.footer{
+  margin-top: 80px;
+  text-align: center;
+}
+.footNav{
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+}
+.footNav a{
+  border-right: 1px solid #666;
+  line-height: 1;
+  padding-right: 10px;
+  font-size: 14px;
+}
+.footNav a:last-child{
+  border-right: 0;
+}
+.copy{
+  padding: 10px 0;
+  background-color: #f08080;
+  color: #fff;
+  font-size: 12px;
+}
+.pageTop{
+  display: none;
+  position: fixed;
+  right: 3vw;
+  font-size: 50px;
+  z-index: 20;
+  bottom: 100px;
+  color: #f08080;
+}
+
+
+.lineupArea{
+  display: flex;
+  flex-wrap: wrap;
+}
+.lineup{
+  position: relative;
+  width: 32%;
+  overflow: hidden;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+.lineup:nth-child(3n){
+  margin-right: 0;
+}
+.lineupCap{
+  width: 100%;
+  height: 100%;
+}
+.lineupCap img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lineupInfo{
+  position: absolute;
+  top: 0;
+  background-color: rgba(245,122,32,0.8);
+  width: 100%;
+  height: 100%;
+  left:0;
+  color: #fff;
+  opacity: 0;
+  text-align: center;
+  transition: all 0.5s;
+}
+.lineup:hover .lineupInfo{
+  opacity: 1;
+  top: 0;
+}
+.lineupInfoInner{
+  position: absolute;
+  top: 50%;
+  left:50%;
+  width: 80%;
+  margin: 0 auto;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.lineupTitle{
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.lineupText{
+  font-size: 14px;
+  text-align: center;
+}
+
+
+.keyVisual{
+  position: relative;
+  height: 450px;
+  background: url(../img/keyVisual.jpg) no-repeat;
+  background-size: cover;
+}
+.keyVisualUnder{
+  height: 260px;
+  margin-bottom: 50px;
+}
+.keyCatch{
+  position: absolute;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.newsLink{
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 5px;
+}
+.newsLinkCap{
+  width: 150px;
+  height: 150px;
+}
+.newsLinkCap img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.newsLinkInfo{
+  position: relative;
+  float: left;
+  width: calc(100% - 150px);
+  background-color: #F5F5F5;
+}
+.newsLinkInner{
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.newsLinkTitle{
+  display: block;
+}
+
+/*Sidebar*/
+.sidebarTitle{
+  background-color: #f08080;
+  padding: 10px;
+  color: #fff;
+}
+.sidebarList{
+  border: 1px solid #ccc;
+}
+.sidebarList a{
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  display: block;
+  padding: 10px;
+  color: #666;
+  font-size: 14px;
+}
+.sidebarList a:last-child{
+  border-bottom: none;
+}
+
+/*newsページ*/
+.newsTitle{
+  font-size: 24px;
+  font-family: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" ,serif;
+}
+.newsDate{
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.newsCap{
+  margin-bottom: 40px;
+}
+.newsCap img{
+  width: 100%;
+}
+.newsText{
+  line-height: 2;
+  text-align: justify;
+  color: #666;
+}
+.newsListUnder .newsLinkCap{
+  width: 120px;
+  height: 120px;
+}
+
+
+.page-numbers{
+  margin-top: 30px;
+}
+.page-numbers{
+  display: inline-block;
+  padding: 14px 16px;
+  background-color: #f5f5f5;
+  line-height: 1;
+  color: #333;
+}
+.page-numbers.current{
+  background-color: #f08080;
+  color: #fff;
+}
+
+.pageNumbers{
+  margin-top: 30px;
+}
+.pageNumbers a{
+  display: inline-block;
+  padding: 14px 16px;
+  background-color: #f5f5f5;
+  line-height: 1;
+  color: #333;
+}
+.pageNumbers a.current{
+  background-color: #f08080;
+  color: #fff;
+}
+
+
+
+
