@@ -1,0 +1,32 @@
+<form class="ridx-input_section" role="search" action="<?php echo esc_url(home_url('/')); ?>">
+<input type="hidden" name="post_type" value="list">
+<input type="hidden" name="s">
+<div class="ridx-input_wrapper">
+<div class="ridx-input_parts ridx-input_area">
+<label for="area">地域</label>
+<select name="area" id="area" class="ridx-sbox ridx-sarea ridx-area_gray">
+<option value="0" selected style="color: #D1D1D1;">地域を絞り込む</option>
+<?php $terms = get_terms('area' ); ?>
+<?php if($terms): ?>
+<?php foreach($terms as $term): ?>
+<option value="<?php echo $term->slug; ?>" style="color: #555555;"><?php echo $term->name; ?></option>
+<?php echo esc_html($term->name ); ?>
+<?php endforeach; ?>
+<?php endif; ?>
+</select>
+</div>
+<div class="ridx-input_parts ridx-input_category">
+<label for="parts">カテゴリー</label>
+<select name="parts" id="parts" class="ridx-sbox ridx-scat ridx-cat_gray">
+<option value="0" selected style="color: #D1D1D1; ">カテゴリーを絞り込む</option>
+<?php $terms = get_terms('parts' ); ?>
+<?php if($terms ): ?>
+  <?php foreach($terms as $term): ?>
+    <option value="<?php echo $term->slug; ?>" style="color: #555555;"><?php echo $term->name; ?></option>
+    <?php echo esc_html($term->name); ?>
+  <?php endforeach; ?>
+<?php endif; ?>
+</select>
+</div>
+</div>
+</form>
